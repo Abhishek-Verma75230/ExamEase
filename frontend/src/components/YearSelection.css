@@ -1,0 +1,49 @@
+
+body {
+    background-color: #B0C5A4; 
+  }
+  
+  .year-selection-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .year-links {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+  }
+  
+  .year-link {
+    text-decoration: none;
+    width: 35%; 
+    margin-bottom: 20px; 
+  }
+  
+  .year-card {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .year-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .year-card i {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .year-card span {
+    font-size: 18px;
+  }
+  
