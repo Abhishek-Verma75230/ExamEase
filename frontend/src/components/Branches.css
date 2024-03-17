@@ -36,12 +36,16 @@
 @media screen and (max-width: 768px) {
   .game-board {
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); 
+    grid-template-columns: auto;
+    grid-template-rows: auto;
   }
 }
 
 @media screen and (max-width: 600px) {
   .game-board {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: auto;
+    grid-template-rows: auto;
   }
   .box
   {
