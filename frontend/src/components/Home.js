@@ -6,21 +6,10 @@ import "../App.css"
 //import { useEffect, useState } from "react";
 
 const Home = () => {
-  // const [visitedBefore, setVisitedBefore] = useState(false);
-
-  // useEffect(() => {
-  //   const hasVisitedBefore = localStorage.getItem("visitedBefore");
-  //   if (hasVisitedBefore) {
-  //     setVisitedBefore(true);
-  //   } else {
-  //     localStorage.setItem("visitedBefore", "true");
-  //   }
-  // }, []);
   return (
     <>
       <div className="frontPage container-fluid">
         <div className="row">
-          {/*left column  */}
 
           <div
             className=" col-md-6 d-flex "

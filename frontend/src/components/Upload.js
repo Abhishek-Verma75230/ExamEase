@@ -59,6 +59,6 @@ function Upload() {
             </form>
         </div>
     );
-}
+} 
 
 export default Upload;
