@@ -20,7 +20,6 @@ export const getLinks = async (req, res) => {
     const { year, branch } = req.params;
 
     const links = await User.find({ year, branch }, 'topic link');
-    console.log(links);
     res.json(links);
   } catch (error) {
     console.error('Error fetching links:', error);
