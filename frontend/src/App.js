@@ -9,6 +9,7 @@ import About from "./components/About";
 import Branches from "./components/Branches";
 import Navbar from "./components/Navbar";
 import Upload from "./components/Upload"
+import Links from "./components/Links";
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/abhishek@123" element={<Upload />} />
         <Route path="/about" element={<About />} />
+        <Route path="/links/:year/:branch" element={<Links />} />
         <Route path="/" element={<Home />} />
         <Route path="/branches/:year" element={<Branches />} />
       </Routes>
