@@ -1,29 +1,9 @@
-.upload-form-container {
-    max-width: 400px;
-    margin:  auto;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .upload-form {
-    display: flex;
-    flex-direction: column;
-   
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
   label {
     font-weight: bold;
   }
   
-  input[type="text"] {
-    padding: 8px;
+  input[type="text"],select {
+    padding: 6px 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
@@ -44,4 +24,20 @@
   button[type="submit"]:hover {
     background-color: #0056b3;
   }
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 90%;
+      margin: auto;
+      max-width: 330px; 
+    }
+  
+    .form-outline {
+      margin-top: 20px;
+    }
+  
+    button[type="submit"] {
+      margin-top: 30px;
+    }
+  }
+  
   
