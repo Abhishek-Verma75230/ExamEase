@@ -1,10 +1,23 @@
 import mongoose from "mongoose";
 
 const courseSchema = new mongoose.Schema({
-  year: String,
-  branch: String,
-  topic: String,
-  link: String
+  year: {
+    type:String,
+  required:true
+},
+  branch: {
+    type:String,
+    required:true
+  },
+  topic:{
+    type:String,
+    required:true,
+    minlength:[5,"Enter minimum 5 characters"]
+  },
+  link: {
+    type:String,
+    required:true
+  }
 });
 
 
