@@ -1,57 +1,33 @@
-#root{
-    background-image: url("../photos/bg.jpg");
-    backface-visibility: calc(0.2);
-    width:100vw;
-    text-align: center;
-}
- 
-.aboutmain{
-    align-items: center;
-    width: fit-content;
-    background-color: rgba(210, 204, 204, 0.1);
-    margin: auto;
-    padding: 0.5rem;
-
-}
-
-
-.about-me-container {
+.about-container {
   display: flex;
-align-items: center;
-justify-content: space-between;
-margin: 40px;
-padding: 10px; 
-
-@media (max-width: 768px) {
-  margin: 10px;
-  padding: 15px;
-  flex-wrap: wrap;
-}
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1); /* Background color with transparency */
 }
 
+.about-content {
+  max-width: 50vw;
+  padding: 3%;
 
-
-.profile-photo {
-  width: 200px;  
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-} */
-
-.text-container {
-  max-width: 600px;
-  @media (max-width: 768px) {
-    max-width: 100%;
+  
+  text-align: center;
+  color: rgb(8, 8, 8);
+  background-color: rgb(241, 243, 244 ,0.6);
+}
+@media (max-width: 700px) {
+  .about-content {
+    width: auto; 
+    height: max-content;
+    max-width: none; 
+    margin: 8px;
+    padding: auto;
+    
+    
+    
   }
-}
+  p {
+    padding: auto;
 
-
-p {
-     
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
+  };
 }
