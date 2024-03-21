@@ -1,43 +1,28 @@
 import React from "react";
-// import peopleIcon from "./people-icon.png"; 
+import "./About.css";
 
 const About = () => {
   return (
-    <div className="container py-5">
-      <div className="row">
-        <div className="col-md-8 mx-auto">
-          <div className="d-flex align-items-center mb-4">
-           
-           
-            {/* <img
-              src={peopleIcon}
-              alt="People Icon"
-              className="mr-3"
-              style={{ height: "2rem" }}
-            /> */}
-            
-            <h2 className="text-center mb-0">About Us</h2>
-          </div>
-          <p className="text-center">
-           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat maxime
-            est hic deserunt quibusdam nihil dolorem, libero ad adipisci unde eveniet?
-            Mollitia suscipit saepe maiores fugit perferendis laboriosam reiciendis modi!
-          </p>
-          <p className="text-center">
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, excepturi
-            dignissimos aliquid id magnam tenetur doloribus alias! Distinctio harum omnis ratione dolore
-            voluptatum error incidunt. Officiis id dolore minima voluptatum.
-          </p>
-          <p className="text-center">
-           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia, 
-           rem qui dolores, et quae hic expedita dolor corrupti quos eius odio facere 
-           aut recusandae voluptatibus minus praesentium soluta facilis. Vero.
-          </p>
-        </div>
+    <div className="about-container">
+      <div className="about-content">
+        <h1>About</h1>
+        <p style={{ fontSize: "20px", padding: "auto", display: "block" }}>
+          Welcome to ExamEase, your trusted partner in exam success! We're
+          dedicated to helping you conquer your exams with confidence. Our
+          platform offers a carefully curated collection of high-quality study
+          materials, including previous year questions, comprehensive notes, and
+          study guides, to streamline your preparation journey. What sets us
+          apart is our commitment to providing a user-friendly experience and
+          expert guidance. Simply select your year and engineering department,
+          then explore organized subjects by semester. Easily access question
+          papers and relevant notes to prepare effectively. Got questions or
+          feedback? Reach out to our supportive team anytime. Thank you for
+          choosing ExamEase as your study companion. Let's unlock your academic
+          potential and succeed together!
+        </p>
       </div>
     </div>
   );
 };
 
 export default About;
-
