@@ -25,4 +25,8 @@ const About = () => {
   );
 };
 
+<<<<<<< HEAD
 export default About;
+=======
+export default About;
+>>>>>>> 0b20263a3fb51f9f7cc8606a5b8cd7f3a4e8b266
