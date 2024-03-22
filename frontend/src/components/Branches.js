@@ -23,34 +23,50 @@ function Branches() {
         <div class="game-board">
          
           <div class="box">
-          <Link to={`/links/${year}/CSE`}>
+          <Link to={`/links/${year}/CSE`} >
             <Card name="CSE" image={com} />
             </Link>
           </div>
          
           <div class="box">
-            <Card name="Electrical" image={elec} />
-          </div>
-          <div class="box">
+          <Link to={`/links/${year}/ECE`}>
             <Card name="ECE" image={ece} />
+            </Link>
           </div>
           <div class="box">
-            <Card name="Chemical" image={chem} />
+          <Link to={`/links/${year}/ELECTRICAL`}>
+            <Card name="ELECTRICAL" image={elec} />
+            </Link>
           </div>
           <div class="box">
-            <Card name="Civil" image={civil} />
+          <Link to={`/links/${year}/ME`}>
+            <Card name="ME" image={mech} />
+            </Link>
           </div>
           <div class="box">
-            <Card name="Production" image={prod} />
+          <Link to={`/links/${year}/PE`}>
+            <Card name="PE" image={prod} />
+            </Link>
           </div>
           <div class="box">
-            <Card name="Mechanical" image={mech} />
+          <Link to={`/links/${year}/CIVIL`}>
+            <Card name="CIVIL" image={civil} />
+            </Link>
           </div>
           <div class="box">
-            <Card name="Maths" image={maths} />
+          <Link to={`/links/${year}/CHEMICAL`} style={{textDecoration:"none"}}>
+            <Card name="CHEMICAL" image={chem} />
+            </Link>
           </div>
           <div class="box">
+          <Link to={`/links/${year}/Mathematics`}>
+            <Card name="Mathematics" image={maths} />
+            </Link>
+          </div>
+          <div class="box">
+          <Link to={`/links/${year}/Physics`}>
             <Card name="Physics" image={phy} />
+            </Link>
           </div>
         </div>
       </div>
