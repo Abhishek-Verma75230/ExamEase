@@ -84,15 +84,15 @@ function Upload() {
                   onChange={handleChange}
                 >
                   <option value="">Select Your Branch</option>
-                  <option value="cse">CSE</option>
-                  <option value="ece">ECE</option>
-                  <option value="ee">EE/EIE</option>
-                  <option value="me">ME</option>
-                  <option value="pe">PE</option>
-                  <option value="civil">CIVIL</option>
-                  <option value="chemical">CHEMICAL</option>
-                  <option value="mathematics">Mathematics</option>
-                  <option value="physics">Physics</option>
+                  <option value="CSE">CSE</option>
+                  <option value="ECE">ECE</option>
+                  <option value="EE">ELECTRICAL</option>
+                  <option value="ME">ME</option>
+                  <option value="PE">PE</option>
+                  <option value="CIVIL">CIVIL</option>
+                  <option value="CHEMICAL">CHEMICAL</option>
+                  <option value="Mathematics">Mathematics</option>
+                  <option value="Physics">Physics</option>
                 </select>
               </div>
               <div

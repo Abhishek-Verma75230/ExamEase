@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import Pdf from './Pdf';
 
 function Links({ match }) {
     const { year, branch } = useParams();
@@ -25,7 +26,8 @@ function Links({ match }) {
       <ul>
         {links.map((link, index) => (
           <li key={index}>
-            <a href={link.link} target="_blank" rel="noopener noreferrer">{link.topic}</a>
+            {/* <a href={link.link} target="_blank" rel="noopener noreferrer">{link.topic}</a> */}
+            <Pdf topic={link.topic} link={link.link}/>
           </li>
         ))}
       </ul>
