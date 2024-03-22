@@ -148,7 +148,7 @@ const Home = () => {
                           style={{ color: "white" }}
                         >
                           <i className="fas fa-graduation-cap"></i>
-                          <span>3rd Year</span>
+                          <span>3rd Year </span>
                         </div>
                       </Link>
                     </div>

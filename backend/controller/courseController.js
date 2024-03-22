@@ -3,7 +3,7 @@ import User from "../Models/Course.js";
 export const uploadLink = async (req, res) => {
   try {
     const { year, branch, topic, link } = req.body;
-    console.log(req.body.year);
+    // console.log(req.body.year);
     const course = new User({ year, branch, topic, link });
     await course.save();
     res.status(201).json({ message: 'Link uploaded successfully!' });

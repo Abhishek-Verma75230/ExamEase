@@ -3,7 +3,7 @@ import Connection from './database/db.js';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import router from './routes/route.js';
-// import router from './routes/route.js';
+
 
 const app=express();
 app.use(cors());
