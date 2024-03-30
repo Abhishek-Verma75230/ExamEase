@@ -1,0 +1,61 @@
+
+
+
+
+.pdf {
+  display: flex;
+  align-items: center;
+}
+
+.topic {
+  flex: 1; /* Take up remaining space */
+}
+
+.actions {
+  margin-left: auto; /* Push actions to the right */
+}
+
+
+h4 {
+ 
+  font-size: 20px;
+ 
+  color: #333;
+  
+}
+
+.buttondownload {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+ padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width:17vh;
+}
+.buttonaddnote
+{
+      background-color: rgb(18, 122, 12);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width:17vh;
+
+}
+
+.buttondownload:hover {
+  background-color: #0056b3;
+}
+.buttonaddnote:hover
+{
+  background-color: #0f5a17;
+}
+
+
+
+/* Additional Styling */
+
