@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { setAuthToken } from './Utils';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { setAuthToken } from "./Utils";
+import background from "../photos/login.png";
 
 const LoginPage = () => {
-  const [loginData, setLoginData] = useState({ email: '', password: '' });
-  const [error, setError] = useState('');
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -16,31 +17,105 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:800/api/login', loginData);
-      localStorage.setItem('token', response.data.token);
+      const response = await axios.post(
+        "http://localhost:800/api/login",
+        loginData
+      );
+      localStorage.setItem("token", response.data.token);
       setAuthToken(response.data.token);
-      setError('');
-      navigate('/dashboard');
+      setError("");
+      navigate("/dashboard");
     } catch (error) {
       setError(error.response.data.message);
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input type="email" name="email" value={loginData.email} onChange={handleChange} />
+    <div
+      style={{
+        backgroundImage: "linear-gradient(to right,  #325463, #88cce6)",        width: "100vw",
+        height: "100vh",
+      }}
+    >
+      <div className="container">
+        <div className="container">
+          <div className="row">
+            
+            <div
+              class=" col-sm-4 my-3"
+              style={{ borderRadius: "1rem", backgroundColor: " #092635" }}
+            >
+              <div class="mb-md-5 mt-md-4 pb-5 text-center">
+                <h2 class="fw-bold mb-2 text-uppercase text-center text-light ">
+                  LOGIN
+                </h2>
+                <p class="text-white-50 mb-5 text-center">
+                  Please enter your Email and password!
+                </p>
+                <form onSubmit={handleSubmit}>
+                  <div class="form-outline form-white mb-4 mx-4">
+                    <label htmlFor="email" className="form-label text-light">
+                      Email address
+                    </label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      onChange={handleChange}
+                      value={loginData.email}
+                      id="email"
+                      name="email"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div
+                    class="form-outline form-white mb-4 mx-4"
+                    style={{ marginTop: "40px" }}
+                  >
+                    <label htmlFor="password" className="form-label text-light">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      onChange={handleChange}
+                      value={loginData.password}
+                      name="password"
+                      id="password"
+                    />
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className="btn btn-outline-light btn-lg px-5"
+                      style={{ marginTop: "40px" }}
+                    >
+                      Login
+                    </button>
+                  </div>
+                  <div>
+                    <p
+                      className="mb-0 text-light"
+                      style={{ marginTop: "30px" }}
+                    >
+                      Don't have an account?
+                      <a class=" fw-bold " style={{color:"aliceblue"}} href="/signup">
+                        Sign Up
+                      </a>{" "}
+                    </p>
+                  </div>
+                </form>
+                {error && <p>{error}</p>}
+              </div>
+              
+            </div>
+            <div class="col-sm-7">
+              <div className="container">
+                <img className="img-fluid" src={background} alt="book" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" name="password" value={loginData.password} onChange={handleChange} />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      {error && <p>{error}</p>}
+      </div>
     </div>
   );
 };

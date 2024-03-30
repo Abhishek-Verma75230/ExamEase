@@ -23,25 +23,47 @@ const SignupPage = () => {
   };
 
   return (
-    <div>
-      <h2>Sign Up</h2>
+    <div style={{
+      backgroundImage: "linear-gradient(to right,  #325463, #88cce6)",        width: "100vw",
+      height: "100vh",
+    }}>
+     
+    <div className="row" >
+   
+
+    <div class="  d-flex justify-content-center align-items-center my-5" >
+    <div className="mb-md-5 mt-md-4  pb-5 text-center"style={{borderRadius:"1rem",background:"white"}} >
+      <h2 class="fw-bold mb-2 my-2 text-center text-dark">Sign In</h2>
+      <p class="text-dark mb-5 text-center">Please create your account!</p>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
-          <input type="text" name="name" value={signupData.name} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input type="email" name="email" value={signupData.email} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" name="password" value={signupData.password} onChange={handleChange} />
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
-      {error && <p>{error}</p>}
+          <div className="form-outline form-white mb-4 mx-4">
+            <input type="text" className="form-control form-control-lg" id="name" name="name" value={signupData.name} onChange={handleChange}  
+            placeholder="Enter Name"
+            aria-describedby="emailHelp"/>
+            <label htmlFor="name" className="form-label text-dark">Name</label>
+
+          </div>
+          <div className="form-outline form-white mb-4 mx-4">
+            <input type="email" className="form-control form-control-lg " id="email" name="email" value={signupData.email} onChange={handleChange} placeholder="Enter Email" aria-describedby="emailHelp"/>
+            <label htmlFor="email" className="form-label text-dark">Email </label>
+          </div>
+          <div className="form-outline form-white mb-4 mx-4">
+            <input type="password" className="form-control form-control-lg" id="password" name="password" value={signupData.password} onChange={handleChange} placeholder="Enter password" minLength={8} required/>
+            <label htmlFor="password" className="form-label text-dark">Password</label>
+
+          </div>
+
+          
+          <button type="submit" className="btn btn-outline-light btn-lg px-5">SignUp</button>
+        </form>
+        {error && <p>{error}</p>}
     </div>
+    </div>
+    </div>
+    </div>
+   
+   
+   
   );
 };
 
