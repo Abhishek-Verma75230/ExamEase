@@ -26,12 +26,12 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/abhishek@123" element={<Upload />} />
+        <Route path="/Upload" element={<Upload />} />
         <Route path="/about" element={<About />} />
         <Route path="/links/:year/:branch" element={<Links />} />
         <Route path="/" element={<Home />} />
         <Route path="/branches/:year" element={<Branches />} />
-        <Route path="/qq" element={<Discuss />} />
+        <Route path="/Discuss" element={<Discuss />} />
         <Route path="/answer/:id" element={<Answer />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
