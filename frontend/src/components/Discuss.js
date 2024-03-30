@@ -1,32 +1,54 @@
+
+
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Discuss() {
   const [questions, setQuestions] = useState([]);
   const [newQuestionText, setNewQuestionText] = useState('');
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const response = await axios.get('http://localhost:800/api/questions');
-        setQuestions(response.data);
-      } catch (error) {
-        console.error('Error fetching questions:', error);
-      }
-    };
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login'); 
+    } else {
+      fetchQuestions();
+    }
+  }, [navigate]); 
 
-    fetchQuestions();
-  }, []);
+  const fetchQuestions = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const response = await axios.get('http://localhost:800/api/questions', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setQuestions(response.data);
+    } catch (error) {
+      console.error('Error fetching questions:', error);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:800/api/questions', { text: newQuestionText });
+      const token = localStorage.getItem('token');
+      await axios.post(
+        'http://localhost:800/api/questions',
+        { text: newQuestionText },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setNewQuestionText('');
       alert('Question posted successfully!');
-      const response = await axios.get('http://localhost:800/api/questions');
-      setQuestions(response.data);
+      fetchQuestions();
     } catch (error) {
       console.error('Error posting question:', error);
       alert('Error posting question. Please try again.');
@@ -43,13 +65,14 @@ function Discuss() {
           placeholder="Enter your question..."
           required
         ></textarea>
-        <button type="submit">Send</button>
+        <button type="submit">Post Question</button>
       </form>
       <ul>
         {questions.map((question) => (
           <li key={question._id}>
-            <p>{question.text}</p>
-            <Link to={`/answer/${question._id}`}>Reply</Link>
+            <h3>PostedBy: {question.user.name}</h3>
+            <p> {question.text}</p>
+            <Link to={`/answer/${question._id}`}>Discuss</Link>
           </li>
         ))}
       </ul>

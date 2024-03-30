@@ -56,8 +56,11 @@ const Navbar = () => {
                                 <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                                 <Link className="btn btn-primary mx-1" to="/signup" role="button">SignUp</Link>
                             </form> : <button onClick={handleLogout} className="btn btn-primary">Logout</button>}
-
+                            <Link className="btn btn-primary mx-1" to="/qq" role="button">Discuss</Link>
                         </form>
+
+
+
                     </div>
                 </div>
             </nav>

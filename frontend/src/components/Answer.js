@@ -38,12 +38,12 @@ function Answer() {
 
     return (
         <div>
-            {/* <h2>Discussion</h2> */}
             <div>
                 <h2>Reply</h2>
                 <ul>
                     {answers.map(answer => (
                         <li key={answer._id}>
+                             <h3>PostedBy: {answer.user.name}</h3>
                             <p>{answer.text}</p>
                         </li>
                     ))}
