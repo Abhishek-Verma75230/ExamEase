@@ -21,13 +21,23 @@ function Links({  }) {
   }, [year, branch]);
 
   return (
-    <div>
-      <h2>Links for {branch} Branch ({year} Year):</h2>
-      <ul>
+    <div
+      style={{
+        marginLeft: "0px",
+        backgroundColor: "rgb(255, 255, 255,0.9)",
+        height: "100vh",
+        textAlign:"center"
+      }}
+    >
+      <h2>
+        Links for {branch} Branch ({year} Year):
+      </h2>
+      <br />
+      <ul style={{ listStyleType: "none", marginLeft: "0px" }}>
         {links.map((link, index) => (
           <li key={index}>
             {/* <a href={link.link} target="_blank" rel="noopener noreferrer">{link.topic}</a> */}
-            <Pdf topic={link.topic} link={link.link}/>
+            <Pdf topic={link.topic} link={link.link} />
           </li>
         ))}
       </ul>
