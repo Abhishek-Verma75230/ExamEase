@@ -1,6 +1,4 @@
 
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,16 +6,16 @@ import { Link, useNavigate } from 'react-router-dom';
 function Discuss() {
   const [questions, setQuestions] = useState([]);
   const [newQuestionText, setNewQuestionText] = useState('');
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
-      navigate('/login'); 
+      navigate('/login');
     } else {
       fetchQuestions();
     }
-  }, [navigate]); 
+  }, [navigate]);
 
   const fetchQuestions = async () => {
     try {
