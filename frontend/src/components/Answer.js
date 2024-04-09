@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import "./Discuss.css";
 
 function Answer() {
     const { id } = useParams();
@@ -42,23 +43,44 @@ function Answer() {
     };
 
     return (
-        <div>
-            <div>
-                <h2>Reply</h2>
-                <ul>
-                    {answers.map(answer => (
-                        <li key={answer._id}>
-                             <h3>PostedBy: {answer.user.name}</h3>
-                            <p>{answer.text}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <form onSubmit={handleSubmit}>
-                <textarea value={answerText} onChange={e => setAnswerText(e.target.value)} placeholder="Enter your answer..." required></textarea>
-                <button type="submit">Send</button>
-            </form>
+      <div className="discuss-container">
+        <div className="discuss-content">
+          <h2>Reply</h2>
+          <ul>
+            {answers.map((answer) => (
+              <li key={answer._id}>
+                <div className="questions">
+                  <h3>PostedBy: {answer.user.name}</h3>
+                  <p>{answer.text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
+        <div className="discuss-post-question-container">
+          <form onSubmit={handleSubmit}>
+            <textarea
+              value={answerText}
+              onChange={(e) => setAnswerText(e.target.value)}
+              placeholder="Enter your answer..."
+              required
+            ></textarea>
+            <button type="submit">
+              {" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="white"
+                class="bi bi-send"
+                viewBox="0 0 16 16"
+              >
+                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
     );
 }
 

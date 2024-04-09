@@ -63,7 +63,7 @@ function Discuss() {
           <ul>
             {questions.map((question) => (
               <li key={question._id}>
-                <div className="questions" style={{ maxWidth: "94vw" }}>
+                <div className="questions">
                   <h3>PostedBy: {question.user.name}</h3>
                   <p> {question.text}</p>
                 </div>
