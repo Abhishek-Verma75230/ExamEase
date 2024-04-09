@@ -11,7 +11,6 @@ import Discuss from "./components/Discuss";
 import Answer from "./components/Answer";
 import LoginPage from "./components/Login";
 import SignupPage from "./components/Signup";
-import Dashboard from "./components/Dashboard";
 
 
 
@@ -32,7 +31,6 @@ function App() {
         <Route path="/branches/:year" element={<Branches />} />
         <Route path="/Discuss" element={<Discuss />} />
         <Route path="/answer/:id" element={<Answer />} />
-        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
     </Router>

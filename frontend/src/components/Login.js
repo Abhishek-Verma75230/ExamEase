@@ -24,14 +24,14 @@ const LoginPage = () => {
       localStorage.setItem("token", response.data.token);
       setAuthToken(response.data.token);
       setError("");
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       setError(error.response.data.message);
     }
   };
 
   return (
-    <div
+    <div 
       style={{
         backgroundImage: "linear-gradient(to right,  #325463, #88cce6)",        width: "100vw",
         height: "100vh",

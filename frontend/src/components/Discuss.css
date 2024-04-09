@@ -6,15 +6,10 @@
   height: 85vh;
   width: 90vw;
   margin: auto;
-  margin-top: 10px;
   border-radius: 10px;
-  scroll-behavior: smooth;
-   scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) transparent;
-
-  
+  background-image: linear-gradient(to right,  #d9e6e9, #f9faf6);
   background-color: rgba(8, 8, 8, 0.2);
-  scrollbar-track-color:transparent ;
+  
 }
 
 .discuss-content {
@@ -91,9 +86,6 @@
 
 .discuss-post-question-container button {
   padding: 0.5rem 1rem;
-  
-  
-  
   border-radius: 70rem;
   margin: auto;
   cursor: pointer;
@@ -128,7 +120,7 @@
 
 .reply {
   appearance: none;
-  background-color:#5C5470;
+  background-color:#fef8f0;
   border: 1px solid rgba(27, 31, 35, .15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -157,7 +149,7 @@
 }
 
 .reply:hover {
-  background-color: #49435a;
+  background-color: rgb(103, 147, 153);
 }
 
 .reply:focus {
