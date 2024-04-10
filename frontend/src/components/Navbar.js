@@ -78,6 +78,9 @@ const Navbar = () => {
               <Link className="btn btn-primary mx-1" to="/Discuss" role="button">
                 Discuss
               </Link>
+              <Link className="btn btn-primary mx-1" to="/upload" role="button">
+                Upload
+              </Link>
             </form>
           </div>
         </div>

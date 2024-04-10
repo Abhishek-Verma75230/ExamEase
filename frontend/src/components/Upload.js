@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios";
 import "./Upload.css";
 import "../App.css";
+import {useNavigate } from 'react-router-dom';
+
 
 function Upload() {
+  const navigate = useNavigate(); 
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login'); 
+    } else {
+      navigate('/upload');
+    }
+  }, [navigate]); 
   const [formData, setFormData] = useState({
     year: "",
     branch: "",

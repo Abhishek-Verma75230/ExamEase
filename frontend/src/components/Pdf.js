@@ -1,12 +1,19 @@
 import React from "react";
 // import "./About.css";
 import "./Pdf.css"
+
 const Pdf = (props) => {
   return (
-    <div>
+    <div style={{ margin:"10px",
+    backgroundColor: "#f1f1f1",
+    padding: "20px",
+    borderRadius: "10px",
+    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+    fontSize: "16px",
+    color: "#333"}}>
       <div className="row" style={{ margin:"10px"}}>
         <div style={{}} className="col">
-          <h4>{props.topic}</h4>
+          <h4 style={{textAlign:"left"}}>{props.topic}</h4>
         </div>
         <div style={{}} className="col">
           <div>
