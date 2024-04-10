@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import "./Discuss.css";
 
+
 function Answer() {
     const { id } = useParams();
     const [answerText, setAnswerText] = useState('');
@@ -43,6 +44,13 @@ function Answer() {
     };
 
     return (
+      <div 
+      style={{
+        backgroundImage: "linear-gradient(to right,  #325463, #88cce6)",  
+        width: "100vw",
+        height: "100vh",
+        paddingTop:"10px"
+      }}>
       <div className="discuss-container">
         <div className="discuss-content">
           <h2>Reply</h2>
@@ -80,6 +88,7 @@ function Answer() {
             </button>
           </form>
         </div>
+      </div>
       </div>
     );
 }
