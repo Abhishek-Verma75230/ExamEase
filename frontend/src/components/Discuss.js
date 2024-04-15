@@ -57,18 +57,27 @@ function Discuss() {
 
   
     return (
-      <div className="discuss-container">
+      <div 
+      style={{
+        backgroundImage: "linear-gradient(to right,  #325463, #88cce6)",  
+        width: "100vw",
+        height: "100vh",
+        paddingTop:"10px"
+      }}>
+       
+      <div className="discuss-container " style={{"marginTop":"10px"}}>
+     
         <div className="discuss-content">
-          <h2>All Questions</h2>
+          <h2 className="fw-bold text-center">Discuss All Your Doubts!</h2>
           <ul>
             {questions.map((question) => (
               <li key={question._id}>
-                <div className="questions" style={{ maxWidth: "94vw" }}>
+                <div className="questions">
                   <h3>PostedBy: {question.user.name}</h3>
                   <p> {question.text}</p>
                 </div>
                 <button className="reply">
-                  <Link to={`/answer/${question._id}`}>Reply</Link>
+                  <Link style={{"color":"black"}} to={`/answer/${question._id}`}>Reply</Link>
                 </button>
               </li>
             ))}
@@ -82,7 +91,7 @@ function Discuss() {
               placeholder="Enter your question..."
               required
             ></textarea>
-            <button type="submit" style={{ backgroundColor: "#5C5470" }}>
+            <button type="submit" style={{ backgroundColor: " rgb(103, 147, 153)" }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -96,7 +105,11 @@ function Discuss() {
             </button>
           </form>
         </div>
+        
       </div>
+      
+      </div>
+      
     );
 }
 

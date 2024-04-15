@@ -21,16 +21,14 @@ function Links({  }) {
   }, [year, branch]);
 
   return (
-    <div
+    <div className="text-center"
       style={{
-        marginLeft: "0px",
-        backgroundColor: "rgb(255, 255, 255,0.9)",
         height: "100vh",
-        textAlign:"center"
       }}
     >
-      <h2>
-        Links for {branch} Branch ({year} Year):
+      <h2 className="my-3 text-center" style={{  fontFamily: "-apple-system,system-ui,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI' Emoji"
+}}>
+        Study Materials for {branch} Branch ({year} Year):
       </h2>
       <br />
       <ul style={{ listStyleType: "none", marginLeft: "0px" }}>
