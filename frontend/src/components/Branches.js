@@ -18,7 +18,7 @@ function Branches() {
   return (
     <div>
       <div className="year-container">
-        <h2>Select Your Branch</h2>
+        <h2 className="my-3">Select Your Branch</h2>
 
         <div class="game-board">
          

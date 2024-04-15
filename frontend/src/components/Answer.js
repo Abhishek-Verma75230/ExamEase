@@ -49,9 +49,8 @@ function Answer() {
         backgroundImage: "linear-gradient(to right,  #325463, #88cce6)",  
         width: "100vw",
         height: "100vh",
-        paddingTop:"10px"
       }}>
-      <div className="discuss-container">
+      <div className="discuss-container my-4">
         <div className="discuss-content">
           <h2>Reply</h2>
           <ul>

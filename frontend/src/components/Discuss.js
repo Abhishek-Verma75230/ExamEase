@@ -65,7 +65,7 @@ function Discuss() {
         paddingTop:"10px"
       }}>
        
-      <div className="discuss-container " style={{"marginTop":"10px"}}>
+      <div className="discuss-container container" style={{"marginTop":"10px"}}>
      
         <div className="discuss-content">
           <h2 className="fw-bold text-center">Discuss All Your Doubts!</h2>
