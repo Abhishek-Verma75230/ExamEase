@@ -11,6 +11,8 @@ import Discuss from "./components/Discuss";
 import Answer from "./components/Answer";
 import LoginPage from "./components/Login";
 import SignupPage from "./components/Signup";
+import NoticesPage from "./components/NoticePage";
+import AdminPage from "./components/AdminPage";
 
 
 
@@ -31,6 +33,8 @@ function App() {
         <Route path="/branches/:year" element={<Branches />} />
         <Route path="/Discuss" element={<Discuss />} />
         <Route path="/answer/:id" element={<Answer />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/nn" element={<NoticesPage />} />
       </Routes>
 
     </Router>
@@ -38,14 +42,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
