@@ -81,6 +81,9 @@ const Navbar = () => {
               <Link className="btn btn-primary mx-1" to="/upload" role="button">
                 Upload
               </Link>
+              <Link className="btn btn-primary mx-1" to="/nn" role="button">
+               Important Announcement
+              </Link>
             </form>
           </div>
         </div>
