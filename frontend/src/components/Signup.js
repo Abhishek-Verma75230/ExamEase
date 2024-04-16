@@ -6,6 +6,7 @@ import background from "../photos/signup.png";
 const SignupPage = () => {
   const [signupData, setSignupData] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
+  const [e,setE]=useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -20,10 +21,13 @@ const SignupPage = () => {
       navigate('/login');
     } catch (error) {
       setError(error.response.data.message);
+      setE(true);
+
     }
   };
 
   return (
+
     <div style={{
       backgroundImage: "linear-gradient(to right,  #325463, #88cce6)",        width: "100vw",
       height: "100vh",
@@ -59,6 +63,7 @@ const SignupPage = () => {
           <button type="submit" className="btn btn-outline-light btn-lg px-5">SignUp</button>
         </form>
         {error && <p>{error}</p>}
+        {e && <h1>please enter valid credentials......</h1>}
     </div>
     </div>
     <div class="col-sm-7">

@@ -7,6 +7,7 @@ import background from "../photos/login.png";
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+  const[e,setE]=useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -27,6 +28,7 @@ const LoginPage = () => {
       navigate("/");
     } catch (error) {
       setError(error.response.data.message);
+      setE(true);
     }
   };
 
@@ -105,6 +107,7 @@ const LoginPage = () => {
                   </div>
                 </form>
                 {error && <p>{error}</p>}
+                {e && <h1>please enter valid credentials</h1>}
               </div>
               
             </div>
