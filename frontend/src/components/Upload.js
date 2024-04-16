@@ -76,10 +76,10 @@ function Upload() {
                   name="year"
                 >
                   <option value="">Select Year</option>
-                  <option value="1st">1st</option>
-                  <option value="2nd">2nd</option>
-                  <option value="3rd">3rd</option>
-                  <option value="4th">4th</option>
+                  <option value="1">1st</option>
+                  <option value="2">2nd</option>
+                  <option value="3">3rd</option>
+                  <option value="4">4th</option>
                 </select>
               </div>
               <div

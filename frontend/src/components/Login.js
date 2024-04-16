@@ -24,9 +24,11 @@ const LoginPage = () => {
       );
       localStorage.setItem("token", response.data.token);
       setAuthToken(response.data.token);
+      setLoginData({ email: "", password: "" });
       setError("");
       navigate("/");
     } catch (error) {
+      setLoginData({ email: "", password: "" });
       setError(error.response.data.message);
       setE(true);
     }

@@ -36,6 +36,7 @@ function Links({  }) {
           <li key={index}>
             {/* <a href={link.link} target="_blank" rel="noopener noreferrer">{link.topic}</a> */}
             <Pdf topic={link.topic} link={link.link} />
+            <h1>link.topic</h1>
           </li>
         ))}
       </ul>
