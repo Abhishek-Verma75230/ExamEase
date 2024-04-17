@@ -18,7 +18,15 @@ background: #eee;
 p, h1, h2 {
   font-family: 'Arial, Helvetica, sans-serif';
  }
- 
+
+ .scrollable-component {
+  height: 100vh; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+  scrollbar-width:thin; 
+  scroll-behavior: smooth;
+  scrollbar-color: darkgray lightgray;
+}
 .about-me-container {
   display: flex;
 align-items: center;

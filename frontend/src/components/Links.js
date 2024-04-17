@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Pdf from './Pdf';
+import '../App.css';
 
 function Links({  }) {
     const { year, branch } = useParams();
@@ -21,10 +22,8 @@ function Links({  }) {
   }, [year, branch]);
 
   return (
-    <div className="text-center"
-      style={{
-        height: "100vh",
-      }}
+    <div className="text-center scrollable-component"
+      
     >
       <h2 className="my-3 text-center" style={{  fontFamily: "-apple-system,system-ui,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI' Emoji"
 }}>
@@ -36,7 +35,6 @@ function Links({  }) {
           <li key={index}>
             {/* <a href={link.link} target="_blank" rel="noopener noreferrer">{link.topic}</a> */}
             <Pdf topic={link.topic} link={link.link} />
-            <h1>link.topic</h1>
           </li>
         ))}
       </ul>

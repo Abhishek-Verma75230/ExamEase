@@ -108,8 +108,7 @@ const LoginPage = () => {
                     </p>
                   </div>
                 </form>
-                {error && <p>{error}</p>}
-                {e && <h1>please enter valid credentials</h1>}
+                {error && <p className="my-3" style={{color:"white"}}>{error}</p>}
               </div>
               
             </div>
