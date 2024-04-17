@@ -75,7 +75,7 @@ function Upload() {
       className="d-flex justify-content-center align-items-center"
     
     >
-        <div className="container bg-light my-3 h-10" style={{ width:"400px",height:"92vh",borderRadius:"5px"}}>
+        <div className="container bg-light my-3 h-10" style={{ width:"400px",height:"89vh",borderRadius:"5px"}}>
           <div class="mb-md-5 mt-md-4 pb-5 text-center">
             <h2
               class="fw-bold mb-2 text-uppercase text-center text-dark "
