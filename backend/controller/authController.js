@@ -14,7 +14,6 @@ export const signup = async (req, res) => {
         await newUser.save();
         res.status(201).json({ message: 'User created successfully' });
     } catch (error) {
-        console.error('Error signing up:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
@@ -33,7 +32,6 @@ export const login = async (req, res) => {
         const token = jwt.sign({ userId: user._id }, 'secret', { expiresIn: '7h' });
         res.json({ token });
     } catch (error) {
-        console.error('Error logging in:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };

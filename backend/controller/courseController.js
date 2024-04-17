@@ -8,8 +8,7 @@ export const uploadLink = async (req, res) => {
     await course.save();
     res.status(201).json({ message: 'Link uploaded successfully!' });
   } catch (error) {
-    console.log("this is wrong");
-    console.log('Error uploading link:', error);
+   
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
