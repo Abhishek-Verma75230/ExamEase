@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import "./ExperienceDetail.css"; // Import your custom CSS file for additional styling
+import "./ExperienceDetail.css"; 
+
+
 
 const ExperienceDetail = () => {
   const { id } = useParams();
@@ -20,6 +22,10 @@ const ExperienceDetail = () => {
     };
     fetchExperience();
   }, [id]);
+
+  const formatDescription = (description) => {
+    return description.replace(/\n/g, '<br>');
+  };
 
   if (!experience) {
     return <div>Loading...</div>;
@@ -65,9 +71,8 @@ const ExperienceDetail = () => {
           <h3 className="card-title">{experience.title}</h3>
           <p
             className="card-text"
-            dangerouslySetInnerHTML={{ __html: experience.description }}
+            dangerouslySetInnerHTML={{ __html: formatDescription(experience.description) }}
           ></p>
-          
         </div>
       </div>
     </div>
