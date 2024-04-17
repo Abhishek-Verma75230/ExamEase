@@ -47,11 +47,9 @@ function Discuss() {
         }
       );
       setNewQuestionText('');
-      alert('Question posted successfully!');
       fetchQuestions();
     } catch (error) {
       console.error('Error posting question:', error);
-      alert('Error posting question. Please try again.');
     }
   };
 
