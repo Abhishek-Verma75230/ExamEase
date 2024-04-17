@@ -8,7 +8,7 @@ import "../App.css"
 const Home = () => {
   return (
     <>
-      <div className="frontPage container-fluid scrollable-component">
+      <div className="frontPage container-fluid">
         <div className="row">
 
           <div
