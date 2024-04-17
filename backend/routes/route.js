@@ -14,6 +14,11 @@ import { addNotice } from "../controller/noticeController.js";
 import isAdmin from "../Middleware/isadmin.js";
 import { check } from "../controller/check.js";
 
+import { addInterview } from "../controller/interviewController.js";
+import { fetchInterview } from "../controller/interviewController.js";
+
+import { getExperienceById } from "../controller/interviewController.js";
+
 import protectRoute from "../Middleware/authMiddleware.js";
 
 
@@ -23,18 +28,34 @@ router.post('/upload', uploadLink);
 router.get('/links/:year/:branch', getLinks);
 
 
-router.get('/questions',protectRoute, getAllQuestions);
-router.post('/questions',protectRoute, postQuestion);
-router.post('/questions/:id/answers',protectRoute, postAnswer);
+router.get('/questions', protectRoute, getAllQuestions);
+router.post('/questions', protectRoute, postQuestion);
+router.post('/questions/:id/answers', protectRoute, postAnswer);
 
-router.get('/questions/:id/answers',protectRoute, getAllAnswers);
+router.get('/questions/:id/answers', protectRoute, getAllAnswers);
+
+
+
+
+router.post('/experiences', protectRoute, addInterview);
+router.get('/experiences', fetchInterview);
+router.get('/experiences/:id', getExperienceById);
+
+
+
+
+
+
+
+
+
 router.post('/signup', signup);
 router.post('/login', login);
-router.get('/userData',protectRoute,isAdmin,check);
+router.get('/userData', protectRoute, isAdmin, check);
 
-router.post('/notices',protectRoute, isAdmin, addNotice);
+router.post('/notices', protectRoute, isAdmin, addNotice);
 
-router.get('/getnotices',protectRoute,fetchNotice);
+router.get('/getnotices', protectRoute, fetchNotice);
 
 
 export default router;

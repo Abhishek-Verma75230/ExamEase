@@ -13,6 +13,10 @@ import LoginPage from "./components/Login";
 import SignupPage from "./components/Signup";
 import NoticesPage from "./components/NoticePage";
 import AdminPage from "./components/AdminPage";
+import ExperienceForm from "./components/ExperienceForm";
+import ExperienceList from "./components/ExpierienceList";
+// import Detail from "./components/Detail";
+import ExperienceDetail from "./components/ExperienceDetails";
 
 
 
@@ -35,6 +39,9 @@ function App() {
         <Route path="/answer/:id" element={<Answer />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/nn" element={<NoticesPage />} />
+        <Route path="/ee" element={<ExperienceForm />} />
+        <Route path="/el" element={<ExperienceList />} />
+        <Route path="/experience/:id"  element={<ExperienceDetail />}/>
       </Routes>
 
     </Router>
