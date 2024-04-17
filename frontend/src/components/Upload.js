@@ -7,6 +7,8 @@ import {useNavigate } from 'react-router-dom';
 
 function Upload() {
   const navigate = useNavigate(); 
+  const[e,setE]=useState(false);
+  const[s,setS]=useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -16,6 +18,24 @@ function Upload() {
       navigate('/upload');
     }
   }, [navigate]); 
+  useEffect(() => {
+    if (s) {
+      const timeoutId = setTimeout(() => {
+        setS(false);
+      }, 2000); 
+      
+      return () => clearTimeout(timeoutId); 
+    }
+  }, [s]);
+  useEffect(() => {
+    if (e) {
+      const timeoutId = setTimeout(() => {
+        setE(false);
+      }, 2000); 
+      
+      return () => clearTimeout(timeoutId); 
+    }
+  }, [e]);
   const [formData, setFormData] = useState({
     year: "",
     branch: "",
@@ -35,16 +55,18 @@ function Upload() {
     e.preventDefault();
     try {
       await axios.post("http://localhost:800/api/upload", formData);
-      alert("Data uploaded successfully!");
+      
       setFormData({
         year: "",
         branch: "",
         topic: "",
         link: "",
       });
+      setS(true);
     } catch (error) {
       console.error("Error uploading data:", error);
-      alert("Error uploading data. Please try again.");
+      setE(true);
+
     }
   };
 
@@ -53,7 +75,7 @@ function Upload() {
       className="d-flex justify-content-center align-items-center"
     
     >
-        <div className="container bg-light my-3 h-10" style={{ width:"400px",height:"89vh"}}>
+        <div className="container bg-light my-3 h-10" style={{ width:"400px",height:"92vh",borderRadius:"5px"}}>
           <div class="mb-md-5 mt-md-4 pb-5 text-center">
             <h2
               class="fw-bold mb-2 text-uppercase text-center text-dark "
@@ -150,6 +172,9 @@ function Upload() {
                 </p>
               </div>
             </form>
+            {e && <p className="my-3 fw-bold" style={{color:"red", fontSize:"22px"}}>Please fill the required fields</p>}
+            {s && <p className="my-2 fw-bold" style={{color:"green", fontSize:"22px"}}>Successfully uploaded</p>}
+
           </div>
         </div>
       </div>

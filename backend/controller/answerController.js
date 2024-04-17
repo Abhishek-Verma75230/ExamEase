@@ -11,7 +11,6 @@ export const postAnswer = async (req, res) => {
     await question.save();
     res.status(201).json(answer);
   } catch (error) {
-    console.error('Error posting answer:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };

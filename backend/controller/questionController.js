@@ -8,7 +8,6 @@ export const getAllQuestions = async (req, res) => {
         const questions = await Question.find().populate('user', 'name email');
         res.json(questions);
     } catch (error) {
-        console.error('Error fetching questions:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };

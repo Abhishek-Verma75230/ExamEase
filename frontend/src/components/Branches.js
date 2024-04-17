@@ -10,17 +10,18 @@ import maths from "../photos/maths.png";
 import prod from "../photos/prod.png";
 import { Link, useParams } from 'react-router-dom';
 import mech from "../photos/mechanical.png";
+import "../App.css";
 
 import phy from "../photos/Physics.png";
   
 function Branches() {
   const { year } = useParams();
   return (
-    <div>
-      <div className="year-container">
+    <div className="scrollable-component">
+      <div className=" container year-container">
         <h2 className="my-3">Select Your Branch</h2>
 
-        <div class="game-board">
+        <div class="container game-board" style={{marginTop:"1rem"}}>
          
           <div class="box">
           <Link to={`/links/${year}/CSE`} >

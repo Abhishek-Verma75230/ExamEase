@@ -1,9 +1,11 @@
 import React from "react";
 import "./About.css";
+import "../App.css";
+
 
 const About = () => {
   return (
-    <div className="about-container">
+    <div className="about-container scrollable-component">
       <div className="about-content">
         <h1>About</h1>
         <p style={{ fontSize: "20px", padding: "auto", display: "block" }}>

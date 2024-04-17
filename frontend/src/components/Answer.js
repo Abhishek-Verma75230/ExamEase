@@ -34,12 +34,10 @@ function Answer() {
             
             await axios.post(`http://localhost:800/api/questions/${id}/answers`, { text: answerText });
             setAnswerText('');
-            alert('Answer posted successfully!');
             const response = await axios.get(`http://localhost:800/api/questions/${id}/answers`);
             setAnswers(response.data);
         } catch (error) {
             console.error('Error posting answer:', error);
-            alert('Error posting answer. Please try again.');
         }
     };
 
