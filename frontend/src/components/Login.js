@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { setAuthToken } from "./Utils";
@@ -7,9 +7,16 @@ import background from "../photos/login.png";
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
-  const[e,setE]=useState(false);
   const navigate = useNavigate();
-
+  useEffect(() => {
+    if (error) {
+      const timeoutId = setTimeout(() => {
+        setError(false);
+      }, 2000); 
+      
+      return () => clearTimeout(timeoutId); 
+    }
+  }, [error]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginData({ ...loginData, [name]: value });
@@ -30,7 +37,6 @@ const LoginPage = () => {
     } catch (error) {
       setLoginData({ email: "", password: "" });
       setError(error.response.data.message);
-      setE(true);
     }
   };
 
@@ -108,7 +114,7 @@ const LoginPage = () => {
                     </p>
                   </div>
                 </form>
-                {error && <p className="my-3" style={{color:"white"}}>{error}</p>}
+                {error && <p className="my-3 fw-bold" style={{color:"red" ,fontSize:"22px"}}>{error}</p>}
               </div>
               
             </div>
