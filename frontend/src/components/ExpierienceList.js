@@ -19,9 +19,9 @@ const ExperienceList = () => {
     }, []);
 
     return (
-        <div>
+        <div className="scrollable-component">
            
-            <div className="container">
+            <div className="container" >
                 <h2 className="text-center mb-4 text-white my-3">Interview Experiences</h2>
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                     {experiences.map(experience => (
