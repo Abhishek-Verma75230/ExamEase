@@ -64,9 +64,9 @@ const AdminPage = () => {
     if (!isAdmin) {
         return (
             <div>
-                <h1>Access Denied, You are not admin ,Now you should request Abhishek </h1>
+                <h1> </h1>
                 <h2>warning</h2>
-                <h1>if you tried to access the backend routes without permission by doing session hijacking or by some other means then the whole database might be deleted.</h1>
+                <h1></h1>
                 <p>You do not have permission to access this page.</p>
             </div>
         );
