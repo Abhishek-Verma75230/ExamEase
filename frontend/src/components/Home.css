@@ -1,106 +1,291 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,600&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
+
+.home-container {
+  display: flex;
   
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  .MyRightBox{
-    
-    display:grid;
-    grid-template-rows: 250px 250px;
-    grid-template-columns: 250px 250px;
-    gap: 10px;
-    justify-content: center;
-  }
-  .MyRightBox .work1 {
-    border-radius: 15px;
-    background:url("../photos/ones.png");
-    background-size: 200px ;
-    text-align: center;
-    padding-top: 70px;
-    font-size: 20px;
-  }
-  .MyRightBox .work2 {
-    border-radius: 15px;
-    background:url("../photos/twos.png");
-    background-size: 200px ;
-    text-align: center;
-    padding-top: 70px;
-    font-size: 20px;
-  }
-  .MyRightBox .work3 {
-    border-radius: 15px;
-    background:url("../photos/threes.png");
-    background-size: 200px ;
-    text-align: center;
-    padding-top: 70px;
-    font-size: 20px;
-  }
-  .MyRightBox .work4 {
-    border-radius: 15px;
-    background:url("../photos/fours.png");
-    background-size: 200px ;
-    text-align: center;
-    padding-top: 70px;
-    font-size: 20px;
-  }
-  .rightInner{
-    background-color: rgb(146, 172, 178);
-    border-radius: 10px;
-    
-
-  }
-
+  flex-direction: column;
+  
+  background-image: url('../photos/front.jpg');
+  
+  background-size: cover;
+  
  
- .layer {
-  width: 100%;
-  height: 0;
-  border-radius: 10px;
-  background: linear-gradient(rgba(124, 122, 116, 0.6), #b5b6a1);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
-  display: grid;
+  backface-visibility:visible;
+
+  height: 60vh;
+}
+
+.home-header {
+  width: 50vw;
+  
+ text-align: center;
+  margin: 0 auto;
+  text-align: left;
+  height: 500px;
+
+}
+.down{
+  border-color: red;
+  color: red;
+}
+.imp{
+  color: blue;
+  border-color: blue;
+}
+.down:hover
+{
+  background-color:red ;
+  border: none;
+}
+.imp:hover{
+  background-color: blue;
+  border: none;
+}
+.upload
+{
+  color: green;
+  border-color:green ;
+
+}
+.upload:hover
+{
+  background-color: green;
+  border: none;
+
+}
+
+
+.home-header h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #333;
+}
+
+.home-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.home-services {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 6vh;
+}
+
+.service-item {
+  text-align: left;
+  flex-basis: 30%;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(249, 249, 249,0.9);
+}
+
+.service-item h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.service-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-item:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.service-item:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.service-item:first-child h2 {
+  color: #585858;
+}
+
+.service-item:nth-child(2) h2 {
+  color: #4a90e2;
+}
+
+.service-item:last-child h2 {
+  color: #f06;
+}
+
+
+
+@media (max-width: 992px) {
+  .home-services {
+    flex-wrap: wrap;
+  }
+  .service-item {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    width: 80%;
+  }
+  .service-item {
+    flex-basis: 100%;
+  }
+}
+.features
+{
+  color: #333;
+  font-size: 40px;
+  margin-bottom: 6vh;
+}
+/*styles for buttons */
+button {
+ 
+ background-color: white;
+ border: 0.125em solid #1A1A1A;
+ border-radius: 1em;
+ margin: 10px;
+ box-sizing: border-box;
+ color: #3B3B3B;
+ cursor: pointer;
+ 
+ font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+ font-size: 16px;
+ font-weight: 600;
+ line-height: normal;
+ margin: 10px;
+ min-height: 3.75em;
+ min-width: 0;
+ outline: none;
+ padding: 1em 2.3em;
+ text-align: center;
+ text-decoration: none;
+ transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ will-change: transform;
+}
+
+button:disabled {
+ pointer-events: none;
+}
+
+button:hover {
+ color: #fff;
+ background-color: #1A1A1A;
+ box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+ transform: translateY(-2px);
+}
+
+button:active {
+ box-shadow: none;
+ transform: translateY(0);
+}
+/* select your year*/
+.yearsection
+{
+  
+}
+.years {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  margin: auto;
+  background-color: rgba(253, 251, 251, 0.6);
+  width: 80vw;
+}
+
+
+
+
+.content .heading {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.3;
+  z-index: 1;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/*year card */
+.yearsection
+{
+  display: flexbox;
+  margin: auto;
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+}
+
+
+
+
+
+
+
+.cards .card {
+  display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 0 40px;
+  flex-direction: row;
   text-align: center;
-  
-
+  height: 200px;
+  width: 300px;
+  border-radius: 10px;
+  color: red;
+  cursor: pointer;
+  transition: 400ms;
+  border:solid;
 }
 
-.work1:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-.work1:hover .layer{
-  height: 100%;
+.cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
 }
 
-.work2:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.cards .card p.second-text {
+  font-size: .7em;
 }
-.work2:hover .layer{
-  height: 100%;
+
+.cards .card:hover {
+  transform: scale(1.1, 1.1);
 }
-.work3:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
 }
-.work3:hover .layer{
-  height: 100%;
+
+/*about*/
+
+
+.welcome-container {
+  text-align: center;
 }
-.work4:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+.welcome-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #4caf50;
 }
-.work4:hover .layer{
-  height: 100%;
+
+.welcome-text {
+  font-size: 1.1rem;
+  color: #333;
 }
