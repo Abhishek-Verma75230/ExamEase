@@ -32,8 +32,9 @@ const ExperienceDetail = () => {
   }
 
   return (
+    <div className="scrollable-component">
     <div
-      className="container-fluid mt-4"
+      className="container-fluid mt-4 "
       style={{ paddingLeft: "25px", paddingRight: "25px" }}
     >
       <div className="card">
@@ -75,6 +76,7 @@ const ExperienceDetail = () => {
           ></p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
