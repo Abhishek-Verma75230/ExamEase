@@ -18,6 +18,8 @@ import ExperienceList from "./components/ExpierienceList";
 // import Detail from "./components/Detail";
 import ExperienceDetail from "./components/ExperienceDetails";
 
+import AdminExperince from "./components/AdminExperience";
+
 
 
 
@@ -42,6 +44,7 @@ function App() {
         <Route path="/e_form" element={<ExperienceForm />} />
         <Route path="/interview" element={<ExperienceList />} />
         <Route path="/experience/:id"  element={<ExperienceDetail />}/>
+        <Route path="/admin/experiences"  element={<AdminExperince />}/>
       </Routes>
 
     </Router>

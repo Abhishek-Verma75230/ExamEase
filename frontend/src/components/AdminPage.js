@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const AdminPage = () => {
     const [isAdmin, setIsAdmin] = useState(false);
@@ -57,6 +58,8 @@ const AdminPage = () => {
         }
     };
 
+   
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -84,6 +87,9 @@ const AdminPage = () => {
                     <button type="submit">Add Notice</button>
                 </form>
             )}
+                  <Link to="/admin/experiences">
+        <button>Manage Interview Experiences</button>
+      </Link>
         </div>
     );
 };
