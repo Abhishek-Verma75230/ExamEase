@@ -397,7 +397,7 @@ const Home = () => {
           Follow us on: 
           
           <a href="https://www.linkedin.com/in/gargi-jaiswal-455617246" target="_blank"style={{marginRight: "10px",color:"black",marginLeft:"10px"}}>
-            <i class="fab fa-linkedin" style={{fontSize: "25px", color:"blue"}}></i>
+            <i class="fab fa-linkedin" style={{fontSize: "25px", color:"#125D98"}}></i>
           </a>
           <a href="https://github.com/Gargi-jais11" target="_blank" style={{marginRight: "10px"}}>
             <i class="fab fa-github" style={{fontSize: "25px"}}></i>
