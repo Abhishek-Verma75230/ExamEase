@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import "./Home.css";
 import "../App.css";
 import { Link } from "react-router-dom";
@@ -6,27 +6,27 @@ import photo1 from '../photos/d_photo.png';
 import photo2 from '../photos/announce.png';
 import photo3 from '../photos/u_notes.png';
 import photo4 from '../photos/i_photo.png';
-import Footer from './Footer'; 
+import Footer from './Footer';
 
 
 
 const Home = () => {
-  const [isHovered1, setIsHovered1] = useState(false); 
-  const [isHovered2, setIsHovered2] = useState(false); 
-  const [isHovered3, setIsHovered3] = useState(false); 
-  const [isHovered4, setIsHovered4] = useState(false); 
+  const [isHovered1, setIsHovered1] = useState(false);
+  const [isHovered2, setIsHovered2] = useState(false);
+  const [isHovered3, setIsHovered3] = useState(false);
+  const [isHovered4, setIsHovered4] = useState(false);
 
   return (
     <div className="scrollable-component " >
       <div className="home-container">
         <div className="home-header">
           <div className="content">
-            <h1 className="fw-bold mt-3 text-center"style={{ color: "white",fontSize:"50px" }}>Exam Ease</h1>
-            <p className="fw-bolder text-white " style={{fontSize:"30px"}}>
+            <h1 className="fw-bold mt-3 text-center" style={{ color: "white", fontSize: "50px" }}>Exam Ease</h1>
+            <p className="fw-bolder text-white " style={{ fontSize: "30px" }}>
               Get your doubts cleared through discussions, previous year
               questions (PYQ), and access to comprehensive notes.
             </p>
-            <p className="fw-semibold  my-3" style={{ color: "white", height: "30px",fontSize:"25px" }}><i>
+            <p className="fw-semibold  my-3" style={{ color: "white", height: "30px", fontSize: "25px" }}><i>
               Embark on your academic journey with confidence as you access our
               valuable resources. Let's elevate your learning experience
               together!</i>
@@ -44,16 +44,16 @@ const Home = () => {
                     style={{ textDecoration: "none" }}
                   >
                     <div className="card h-100 shadow-sm"
-                    onMouseEnter={() => setIsHovered1(true)}
-  onMouseLeave={() => setIsHovered1(false)}>
+                      onMouseEnter={() => setIsHovered1(true)}
+                      onMouseLeave={() => setIsHovered1(false)}>
                       <div className="card-body">
-                      {isHovered1 && (
-      <div className="text-overlay">
-        <p className="overlay-text fs-3 fw-bold">Discuss</p>
-      </div>
-    )}
-                        <img src={photo1} alt="Upload" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '100%' }}/>
-                        
+                        {isHovered1 && (
+                          <div className="text-overlay">
+                            <p className="overlay-text fs-3 fw-bold">Discuss</p>
+                          </div>
+                        )}
+                        <img src={photo1} alt="Upload" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '100%' }} />
+
 
                       </div>
                     </div>
@@ -65,17 +65,17 @@ const Home = () => {
                     style={{ textDecoration: "none" }}
                     to="/upload"
                   >
-                  <div className="card h-100 shadow-sm"
-                    onMouseEnter={() => setIsHovered2(true)}
-  onMouseLeave={() => setIsHovered2(false)}>
+                    <div className="card h-100 shadow-sm"
+                      onMouseEnter={() => setIsHovered2(true)}
+                      onMouseLeave={() => setIsHovered2(false)}>
                       <div className="card-body">
-                      {isHovered2 && (
-      <div className="text-overlay">
-        <p className="overlay-text fs-3 fw-bold">Upload Notes</p>
-      </div>
-    )}
-                        <img src={photo3} alt="Upload" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '100%' }}/>
-                        
+                        {isHovered2 && (
+                          <div className="text-overlay">
+                            <p className="overlay-text fs-3 fw-bold">Upload Notes</p>
+                          </div>
+                        )}
+                        <img src={photo3} alt="Upload" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '100%' }} />
+
 
                       </div>
                     </div>
@@ -88,22 +88,22 @@ const Home = () => {
                     style={{ textDecoration: "none" }}
                   >
                     <div className="card h-100 shadow-sm"
-                    onMouseEnter={() => setIsHovered3(true)}
-  onMouseLeave={() => setIsHovered3(false)}>
+                      onMouseEnter={() => setIsHovered3(true)}
+                      onMouseLeave={() => setIsHovered3(false)}>
                       <div className="card-body">
-                      {isHovered3 && (
-      <div className="text-overlay">
-        <p className="overlay-text fs-3 fw-bold">Announcement</p>
-      </div>
-    )}
-                        <img src={photo2} alt="Upload" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '100%' }}/>
-                        
+                        {isHovered3 && (
+                          <div className="text-overlay">
+                            <p className="overlay-text fs-3 fw-bold">Announcement</p>
+                          </div>
+                        )}
+                        <img src={photo2} alt="Upload" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '100%' }} />
+
 
                       </div>
                     </div>
                   </Link>
                 </div>
-                
+
                 <div className="col-md-3">
                   <Link
                     to="/interview"
@@ -111,16 +111,16 @@ const Home = () => {
                     style={{ textDecoration: "none" }}
                   >
                     <div className="card h-100 shadow-sm"
-                    onMouseEnter={() => setIsHovered4(true)}
-  onMouseLeave={() => setIsHovered4(false)}>
+                      onMouseEnter={() => setIsHovered4(true)}
+                      onMouseLeave={() => setIsHovered4(false)}>
                       <div className="card-body">
-                      {isHovered4 && (
-      <div className="text-overlay">
-        <p className="overlay-text fs-3 fw-bold">Interview Experiences</p>
-      </div>
-    )}
-                        <img src={photo4} alt="Upload" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '100%' }}/>
-                        
+                        {isHovered4 && (
+                          <div className="text-overlay">
+                            <p className="overlay-text fs-3 fw-bold">Interview Experiences</p>
+                          </div>
+                        )}
+                        <img src={photo4} alt="Upload" className="card-img-top img-fluid" style={{ objectFit: 'cover', height: '100%' }} />
+
 
                       </div>
                     </div>
@@ -209,7 +209,7 @@ const Home = () => {
           </p>
           <div className="row" style={{ width: "90vw", margin: "auto" }}>
             <div className="col" style={{}}>
-              <h1 className="welcome-title">Welcome to Lyft Culture!</h1>
+              <h1 className="welcome-title" style={{ fontWeight: "bold" }}>Welcome to Lyft Culture!</h1>
               <p style={{ fontSize: "20px" }}>
                 Welcome to ExamEase, your trusted partner in exam success! We're
                 dedicated to helping you conquer your exams with confidence. Our
@@ -377,23 +377,23 @@ const Home = () => {
           </div>
         </div>
         <div>
-            <Footer />
+          <Footer />
         </div>
         <div className="bg-light">
-                <div className="row">
-    <div className="col-md-2">
-        <p className="text-left fs-3 my-3 fw-bold border-end border-dark hide-on-mobile" style={{ color: 'black', fontFamily: "Poppins, sans-serif" }}>ExamEase</p>
-    </div>
-    <div className="col-md-2">
-        <p className="text-left my-3 " style={{ color: '#111827', fontFamily: "Poppins, sans-serif",fontSize:"18px" }}>Copyright 
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blackr" className="bi bi-c-circle" viewBox="0 0 16 16">
-                <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512"/>
-            </svg>ExamEase.com
-            
-        </p>
-    </div>
-</div>
-</div>
+          <div className="row">
+            <div className="col-md-2">
+              <p className="text-left fs-3 my-3 fw-bold border-end border-dark hide-on-mobile" style={{ color: 'black', fontFamily: "Poppins, sans-serif" }}>ExamEase</p>
+            </div>
+            <div className="col-md-2">
+              <p className="text-left my-3 " style={{ color: '#111827', fontFamily: "Poppins, sans-serif", fontSize: "18px" }}>Copyright
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blackr" className="bi bi-c-circle" viewBox="0 0 16 16">
+                  <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512" />
+                </svg>ExamEase.com
+
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
