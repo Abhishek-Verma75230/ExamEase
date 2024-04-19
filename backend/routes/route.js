@@ -49,7 +49,7 @@ router.get('/experiences/:id', getExperienceById);
 
 router.get('/falseExperiences',protectRoute,isAdmin,fetchfasleInterview);
 
-router.put('/experiences/:id/accept',protectRoute,isAdmin,acceptExperience);
+router.put('/experiences/:id/accept',acceptExperience);
 
 router.delete('/experiences/:id',protectRoute,isAdmin,declineExperience)
 

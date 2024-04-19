@@ -27,7 +27,7 @@ const AdminExperince = () => {
             const headers = {
               'Authorization': `Bearer ${token}`
             };
-            await axios.put(`http://localhost:800/api/experiences/${id}/accept`,{headers});
+            await axios.put(`http://localhost:800/api/experiences/${id}/accept`,{ headers });
             setExperiences(experiences.filter(exp => exp._id !== id));
         } catch (error) {
             console.error('Error accepting experience:', error);
