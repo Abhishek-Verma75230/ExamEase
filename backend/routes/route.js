@@ -19,6 +19,12 @@ import { fetchInterview } from "../controller/interviewController.js";
 
 import { getExperienceById } from "../controller/interviewController.js";
 
+import { fetchfasleInterview } from "../controller/interviewController.js";
+
+import { acceptExperience } from "../controller/interviewController.js";
+
+import { declineExperience } from "../controller/interviewController.js";
+
 import protectRoute from "../Middleware/authMiddleware.js";
 
 
@@ -40,6 +46,12 @@ router.get('/questions/:id/answers', protectRoute, getAllAnswers);
 router.post('/experiences', protectRoute, addInterview);
 router.get('/experiences', fetchInterview);
 router.get('/experiences/:id', getExperienceById);
+
+router.get('/falseExperiences',protectRoute,isAdmin,fetchfasleInterview);
+
+router.put('/experiences/:id/accept',protectRoute,isAdmin,acceptExperience);
+
+router.delete('/experiences/:id',protectRoute,isAdmin,declineExperience)
 
 
 
