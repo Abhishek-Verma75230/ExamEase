@@ -1,55 +1,62 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {  useNavigate } from 'react-router-dom';
-const NoticesPage = () => {
-  const [notices, setNotices] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/login');
-    } 
-  }, [navigate]);
+
+const ImportantNoticePage = () => {
+  const [topNotices, setTopNotices] = useState([]);
+  const [allNotices, setAllNotices] = useState([]);
 
   useEffect(() => {
-    const fetchNotices = async () => {
+    const fetchTopNotices = async () => {
       try {
-       
-        const token = localStorage.getItem('token');
-  
-      
-        const response = await axios.get('http://localhost:800/api/getnotices', {
-          headers: {
-            Authorization: `Bearer ${token}` 
-          }
-        });
-  
-        
-        setNotices(response.data);
-        setLoading(false);
+        const response = await axios.get('http://localhost:800/api/notices/top');
+        setTopNotices(response.data);
       } catch (error) {
-        console.error('Error fetching notices:', error);
+        console.error('Error fetching top notices:', error);
       }
     };
-  
-    fetchNotices();
+
+    const fetchAllNotices = async () => {
+      try {
+        const response = await axios.get('http://localhost:800/api/notices');
+        setAllNotices(response.data);
+      } catch (error) {
+        console.error('Error fetching all notices:', error);
+      }
+    };
+
+    fetchTopNotices();
+    fetchAllNotices();
   }, []);
-  
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
-    <div>
-      <h1>Notices</h1>
-      <ul>
-        {notices.map((notice, index) => (
-          <li key={index}>{notice.text}</li>
-        ))}
-      </ul>
+    <div className="notice-page row">
+      {/* yaha par top vali notices aengi css likhte  time par ye vala container left side me rakhna card banakar */}
+      <div className="top-notices-container col">
+        <h2>Top Notices</h2>
+        <div className="notice-cards">
+          {topNotices.map(notice => (
+            <div key={notice.id} className="notice-card">
+              <h3>{notice.title}</h3>
+              <p>{notice.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="all-notices-container col">
+        {/* yaha par sari notices aengi css likhte time par ise rigth me rakhna */}
+        <h2>All Notices</h2>
+        <div className="notice-list">
+          {allNotices.map(notice => (
+            <div key={notice.id} className="notice">
+              <h3>{notice.title}</h3>
+              <p>{notice.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default NoticesPage;
+export default ImportantNoticePage;

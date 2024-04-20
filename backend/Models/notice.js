@@ -1,11 +1,18 @@
-
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const noticeSchema = new mongoose.Schema({
-    text: {
-        type: String,
-        required: true
-    }
+  title: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const Notice = mongoose.model('Notice', noticeSchema);
