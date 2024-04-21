@@ -1,27 +1,31 @@
-
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import './noticepage.css';
 
 const ImportantNoticePage = () => {
   const [topNotices, setTopNotices] = useState([]);
   const [allNotices, setAllNotices] = useState([]);
+  const scrollingDivRef = useRef(null);
+  const [currentNoticeIndex, setCurrentNoticeIndex] = useState(0);
 
   useEffect(() => {
     const fetchTopNotices = async () => {
       try {
-        const response = await axios.get('http://localhost:800/api/notices/top');
+        const response = await axios.get(
+          "http://localhost:800/api/notices/top"
+        );
         setTopNotices(response.data);
       } catch (error) {
-        console.error('Error fetching top notices:', error);
+        console.error("Error fetching top notices:", error);
       }
     };
 
     const fetchAllNotices = async () => {
       try {
-        const response = await axios.get('http://localhost:800/api/notices');
+        const response = await axios.get("http://localhost:800/api/notices");
         setAllNotices(response.data);
       } catch (error) {
-        console.error('Error fetching all notices:', error);
+        console.error("Error fetching all notices:", error);
       }
     };
 
@@ -29,13 +33,29 @@ const ImportantNoticePage = () => {
     fetchAllNotices();
   }, []);
 
+  useEffect(() => {
+    const scrollToNextNotice = () => {
+      if (scrollingDivRef.current) {
+        scrollingDivRef.current.scrollTop += 50; 
+      }
+    };
+
+    const intervalId = setInterval(scrollToNextNotice, 2000); 
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
   return (
     <div className="notice-page row">
-      {/* yaha par top vali notices aengi css likhte  time par ye vala container left side me rakhna card banakar */}
-      <div className="top-notices-container col">
-        <h2>Top Notices</h2>
+      <div
+        className="top-notices-container col"
+        style={{ textAlign: "center", margin: "auto" ,marginLeft:"20px"}}
+      >
+        <h2 style={{ color: "white" }}>Top Notices</h2>
         <div className="notice-cards">
-          {topNotices.map(notice => (
+          {topNotices.map((notice) => (
             <div key={notice.id} className="notice-card">
               <h3>{notice.title}</h3>
               <p>{notice.content}</p>
@@ -43,16 +63,26 @@ const ImportantNoticePage = () => {
           ))}
         </div>
       </div>
-      <div className="all-notices-container col">
-        {/* yaha par sari notices aengi css likhte time par ise rigth me rakhna */}
-        <h2>All Notices</h2>
-        <div className="notice-list">
-          {allNotices.map(notice => (
-            <div key={notice.id} className="notice">
-              <h3>{notice.title}</h3>
-              <p>{notice.content}</p>
-            </div>
-          ))}
+      <div className="col" style={{ margin: "auto" ,textAlign:"center"}}>
+        <h2 style={{color:"white"}}>All Notices</h2>
+        <div
+          className="all-notices-container "
+          style={{
+            height: "400px",
+            overflowY: "scroll",
+            textAlign: "center",
+            margin: "auto",
+          }}
+          ref={scrollingDivRef}
+        >
+          <div className="notice-list">
+            {allNotices.map((notice, index) => (
+              <div key={notice.id} className="notice">
+                <h3>{notice.title}</h3>
+                <p>{notice.content}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
