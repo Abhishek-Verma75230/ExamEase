@@ -5,18 +5,18 @@
   
   flex-direction: column;
   
-  background-image: url('../photos/front.jpg');
+  background-image: url('../photos/front4.jpg');
  
   background-size: cover;
   
   backface-visibility:visible;
 
-  height: 60vh;
+  height: 65vh;
 }
 
 
 .home-header {
-  width: 50vw;
+  width: 55vw;
   margin: 0 auto;
   text-align:center;
   height: 500px;
