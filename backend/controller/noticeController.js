@@ -13,14 +13,6 @@ export const addNotice = async (req, res) => {
     }
   };
 
-// export const fetchNotice = async (req, res) => {
-//     try {
-//         const data = await Notice.find();
-//         res.json(data);
-//     } catch (error) {
-//         res.status(500).json({ message: 'error while fetching notices' });
-//     }
-// };
 
 
 export const getTopNotices = async (req, res) => {

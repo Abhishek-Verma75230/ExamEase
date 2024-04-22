@@ -29,12 +29,16 @@ import { getAllNotices } from "../controller/noticeController.js";
 
 import { getTopNotices } from "../controller/noticeController.js";
 
+import { verifyOTP } from "../controller/authController.js";
+
 import protectRoute from "../Middleware/authMiddleware.js";
 
 
 
 
 router.post('/upload', uploadLink);
+
+
 router.get('/links/:year/:branch', getLinks);
 
 
@@ -67,6 +71,9 @@ router.delete('/experiences/:id',protectRoute,isAdmin,declineExperience)
 
 router.post('/signup', signup);
 router.post('/login', login);
+router.post('/verifyOTP',verifyOTP);
+
+
 router.get('/userData', protectRoute, isAdmin, check);
 
 router.post('/notices', protectRoute, isAdmin, addNotice);

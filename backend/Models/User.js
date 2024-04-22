@@ -6,8 +6,12 @@ const userSchema = new mongoose.Schema({
   password: String,
   isAdmin: {
     type: Number,
-    default: 0 
-  }
+    default: 0
+  },
+
+  isemailVerified: { type: Boolean, default: false }
+
+
 });
 
 const Userr = mongoose.model('Userr', userSchema);

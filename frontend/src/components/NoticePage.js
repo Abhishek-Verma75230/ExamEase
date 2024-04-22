@@ -57,6 +57,9 @@ const ImportantNoticePage = () => {
         <div className="notice-cards">
           {topNotices.map((notice) => (
             <div key={notice.id} className="notice-card">
+              <li className="nav-item mx-3" style={{ color: "#424242" }}>
+              PostedOn: {new Date(notice.createdAt).toLocaleDateString()}
+            </li>
               <h3>{notice.title}</h3>
               <p>{notice.content}</p>
             </div>
@@ -77,7 +80,11 @@ const ImportantNoticePage = () => {
         >
           <div className="notice-list">
             {allNotices.map((notice, index) => (
+              
               <div key={notice.id} className="notice">
+            <li className="nav-item mx-3" style={{ color: "#424242" }}>
+              PostedOn: {new Date(notice.createdAt).toLocaleDateString()}
+            </li>
                 <h3>{notice.title}</h3>
                 <p>{notice.content}</p>
               </div>

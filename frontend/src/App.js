@@ -41,7 +41,7 @@ function App() {
         <Route path="/answer/:id" element={<Answer />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/nn" element={<NoticesPage />} />
-        {/* <Route path="/e_form" element={<ExperienceForm />} /> */}
+       {/* { <Route path="/e_form" element={<ExperienceForm />} /> } */}
         <Route path="/interview" element={<ExperienceList />} />
         <Route path="/experience/:id"  element={<ExperienceDetail />}/>
         <Route path="/admin/experiences"  element={<AdminExperince />}/>
