@@ -13,7 +13,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon backend/index.js"
+    "backend": "nodemon backend/index.js",
+    "frontend":"npm  run start --prefix frontend",
+    "build":"npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "ISC",
