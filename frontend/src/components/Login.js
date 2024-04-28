@@ -26,7 +26,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:800/api/login",
+        "https://examease.onrender.com/api/login",
         loginData
       );
       localStorage.setItem("token", response.data.token);

@@ -14,7 +14,7 @@ const AdminPage = () => {
         const fetchUserData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:800/api/userData', {
+                const response = await axios.get('https://examease.onrender.com/api/userData', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -33,7 +33,7 @@ const AdminPage = () => {
         event.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('http://localhost:800/api/notices', { title: noticeTitle, content: noticeContent }, {
+            const response = await axios.post('https://examease.onrender.com/api/notices', { title: noticeTitle, content: noticeContent }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

@@ -22,7 +22,7 @@ function Discuss() {
   const fetchQuestions = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:800/api/questions', {
+      const response = await axios.get('https://examease.onrender.com/api/questions', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -38,7 +38,7 @@ function Discuss() {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:800/api/questions',
+        'https://examease.onrender.com/api/questions',
         { text: newQuestionText },
         {
           headers: {

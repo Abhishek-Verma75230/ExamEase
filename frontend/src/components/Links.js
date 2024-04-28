@@ -11,7 +11,7 @@ function Links({  }) {
   useEffect(() => {
     const fetchLinks = async () => {
       try {
-        const response = await axios.get(`http://localhost:800/api/links/${year}/${branch}`);
+        const response = await axios.get(`https://examease.onrender.com/api/links/${year}/${branch}`);
         setLinks(response.data);
       } catch (error) {
         console.error('Error fetching links:', error);

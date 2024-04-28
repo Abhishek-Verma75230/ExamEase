@@ -15,7 +15,7 @@ const ExperienceForm = () => {
         'Authorization': `Bearer ${token}`
       };
       await axios.post(
-        'http://localhost:800/api/experiences',
+        'https://examease.onrender.com/api/experiences',
         { title, description },
         { headers }
       );

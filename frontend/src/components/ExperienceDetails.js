@@ -13,7 +13,7 @@ const ExperienceDetail = () => {
     const fetchExperience = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:800/api/experiences/${id}`
+          `https://examease.onrender.com/api/experiences/${id}`
         );
         setExperience(response.data);
       } catch (error) {

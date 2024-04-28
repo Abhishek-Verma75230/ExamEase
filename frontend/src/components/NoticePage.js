@@ -12,7 +12,7 @@ const ImportantNoticePage = () => {
     const fetchTopNotices = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:800/api/notices/top"
+          "https://examease.onrender.com/api/notices/top"
         );
         setTopNotices(response.data);
       } catch (error) {
@@ -22,7 +22,7 @@ const ImportantNoticePage = () => {
 
     const fetchAllNotices = async () => {
       try {
-        const response = await axios.get("http://localhost:800/api/notices");
+        const response = await axios.get("https://examease.onrender.com/api/notices");
         setAllNotices(response.data);
       } catch (error) {
         console.error("Error fetching all notices:", error);

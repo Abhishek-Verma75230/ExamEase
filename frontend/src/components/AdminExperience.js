@@ -11,7 +11,7 @@ const AdminExperince = () => {
                 const headers = {
                   'Authorization': `Bearer ${token}`
                 };
-                const response = await axios.get('http://localhost:800/api/falseExperiences',{ headers });
+                const response = await axios.get('https://examease.onrender.com/api/falseExperiences',{ headers });
                 setExperiences(response.data);
             } catch (error) {
                 console.error('Error fetching false experiences:', error);
@@ -26,7 +26,7 @@ const AdminExperince = () => {
             const headers = {
               'Authorization': `Bearer ${token}`
             };
-            await axios.put(`http://localhost:800/api/experiences/${id}/accept`,{ headers });
+            await axios.put(`https://examease.onrender.com/api/experiences/${id}/accept`,{ headers });
             setExperiences(experiences.filter(exp => exp._id !== id));
         } catch (error) {
             console.error('Error accepting experience:', error);
@@ -39,7 +39,7 @@ const AdminExperince = () => {
             const headers = {
               'Authorization': `Bearer ${token}`
             };
-            await axios.delete(`http://localhost:800/api/experiences/${id}`,{headers});
+            await axios.delete(`https://examease.onrender.com/api/experiences/${id}`,{headers});
             setExperiences(experiences.filter(exp => exp._id !== id));
         } catch (error) {
             console.error('Error declining experience:', error);

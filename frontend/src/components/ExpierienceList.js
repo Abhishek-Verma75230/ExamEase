@@ -12,7 +12,7 @@ const ExperienceList = () => {
   useEffect(() => {
     const fetchExperiences = async () => {
       try {
-        const response = await axios.get('http://localhost:800/api/experiences');
+        const response = await axios.get('https://examease.onrender.com/api/experiences');
         setExperiences(response.data);
       } catch (error) {
         console.error('Error fetching experiences:', error);
@@ -33,7 +33,7 @@ const ExperienceList = () => {
         'Authorization': `Bearer ${token}`
       };
       await axios.post(
-        'http://localhost:800/api/experiences',
+        'https://examease.onrender.com/api/experiences',
         { title, description },
         { headers }
       );

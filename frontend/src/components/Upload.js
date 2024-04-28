@@ -54,7 +54,7 @@ function Upload() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:800/api/upload", formData);
+      await axios.post("https://examease.onrender.com/api/upload", formData);
       
       setFormData({
         year: "",

@@ -16,7 +16,7 @@ function Answer() {
                 const token = localStorage.getItem('token');
                 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
                 
-                const response = await axios.get(`http://localhost:800/api/questions/${id}/answers`);
+                const response = await axios.get(`https://examease.onrender.com/api/questions/${id}/answers`);
                 setAnswers(response.data);
             } catch (error) {
                 console.error('Error fetching answers:', error);
@@ -32,9 +32,9 @@ function Answer() {
             const token = localStorage.getItem('token');
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             
-            await axios.post(`http://localhost:800/api/questions/${id}/answers`, { text: answerText });
+            await axios.post(`https://examease.onrender.com/api/questions/${id}/answers`, { text: answerText });
             setAnswerText('');
-            const response = await axios.get(`http://localhost:800/api/questions/${id}/answers`);
+            const response = await axios.get(`https://examease.onrender.com/api/questions/${id}/answers`);
             setAnswers(response.data);
         } catch (error) {
             console.error('Error posting answer:', error);

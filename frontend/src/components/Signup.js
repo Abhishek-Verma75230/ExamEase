@@ -30,7 +30,7 @@ const SignupPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:800/api/signup', signupData);
+      const response = await axios.post('https://examease.onrender.com/api/signup', signupData);
       if (response.data.requiresOtp) {
         setRequiresOtp(true);
         setSign(false);
@@ -46,7 +46,7 @@ const SignupPage = () => {
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:800/api/verifyOTP', {
+      const response = await axios.post('https://examease.onrender.com/api/verifyOTP', {
         email: signupData.email,
         otp: otpData.otp
       });
