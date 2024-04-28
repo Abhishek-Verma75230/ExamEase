@@ -1,6 +1,7 @@
 
-import Answer from "../Models/Answer.js";
+import Answer from "../Models/answer.js";
 import Question from "../Models/Question.js";
+// import Answer from "../Models/Answer.js";
 export const postAnswer = async (req, res) => {
   try {
     const question = await Question.findById(req.params.id);
