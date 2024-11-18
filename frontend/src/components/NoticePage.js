@@ -32,21 +32,19 @@ const ImportantNoticePage = () => {
     fetchTopNotices();
     fetchAllNotices();
   }, []);
+  // useEffect(() => {
+  //   const scrollToNextNotice = () => {
+  //     if (scrollingDivRef.current) {
+  //       scrollingDivRef.current.scrollTop += 50; 
+  //     }
+  //   };
 
-  useEffect(() => {
-    const scrollToNextNotice = () => {
-      if (scrollingDivRef.current) {
-        scrollingDivRef.current.scrollTop += 50; 
-      }
-    };
+  //   const intervalId = setInterval(scrollToNextNotice, 2000); 
 
-    const intervalId = setInterval(scrollToNextNotice, 2000); 
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
+  //   return () => {
+  //     clearInterval(intervalId);
+  //   };
+  // }, []);
   return (
     <div className="notice-page row">
       <div

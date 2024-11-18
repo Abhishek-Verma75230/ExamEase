@@ -59,12 +59,6 @@ const Pdf = (props) => {
         </div>
       </div>
     </div>
-    {/* <div className="desired-text1">
- Download
-</div> */}
-{/* <div className="desired-text2" >
-  Add Note
-</div> */}
     </div>
     
   );

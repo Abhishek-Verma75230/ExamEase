@@ -4,10 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import background from "../photos/signup.png";
 
 const SignupPage = () => {
-  // const [signupData, setSignupData] = useState({ name: '', email: '', password: '' });
-  // const [error, setError] = useState('');
   const [e, setE] = useState(false);
-  // const navigate = useNavigate();
   const [signupData, setSignupData] = useState({ name: '', email: '', password: '' });
   const [otpData, setOtpData] = useState({ otp: '' });
   const [error, setError] = useState('');

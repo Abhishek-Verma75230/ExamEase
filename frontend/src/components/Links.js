@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Pdf from './Pdf';
 import '../App.css';
 
-function Links({  }) {
+function Links() {
     const { year, branch } = useParams();
   const [links, setLinks] = useState([]);
 
@@ -33,7 +33,6 @@ function Links({  }) {
       <ul style={{ listStyleType: "none", marginLeft: "0px" }}>
         {links.map((link, index) => (
           <li key={index}>
-            {/* <a href={link.link} target="_blank" rel="noopener noreferrer">{link.topic}</a> */}
             <Pdf topic={link.topic} link={link.link} />
           </li>
         ))}

@@ -1,5 +1,3 @@
- 
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -30,7 +28,6 @@ const ExperienceForm = () => {
   const handleTextareaKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      // Insert a newline character
       setDescription(description + '\n');
     }
   };
@@ -41,7 +38,7 @@ const ExperienceForm = () => {
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        onKeyDown={handleTextareaKeyPress} // Handle Enter key press
+        onKeyDown={handleTextareaKeyPress} 
         placeholder="Description"
         required
       ></textarea>

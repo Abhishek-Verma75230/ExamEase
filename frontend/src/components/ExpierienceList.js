@@ -24,7 +24,7 @@ const ExperienceList = () => {
   const toggleForm = () => {
     setIsFormOpen(prevState => !prevState);
   };
-// form backend post code
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -48,7 +48,6 @@ const ExperienceList = () => {
   const handleTextareaKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      // Insert a newline character
       setDescription(description + '\n');
     }
   };
@@ -80,7 +79,6 @@ const ExperienceList = () => {
           ))}
         </div>
       </div>
-      {/* form pop up code */}
       {isFormOpen && (
         <div className="form-container">
                     <div className="d-flex justify-content-end">
@@ -94,7 +92,7 @@ const ExperienceList = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="description" className="form-label">Description</label>
-              <textarea className="form-control" id="description" value={description} onChange={(e) => setDescription(e.target.value)} onKeyDown={handleTextareaKeyPress} // Handle Enter key press
+              <textarea className="form-control" id="description" value={description} onChange={(e) => setDescription(e.target.value)} onKeyDown={handleTextareaKeyPress} 
               placeholder="Description" required></textarea>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
