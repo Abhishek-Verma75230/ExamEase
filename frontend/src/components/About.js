@@ -14,7 +14,7 @@ const About = () => {
         <p style={{ fontSize: "20px" }}>
           Welcome to ExamEase, your trusted partner in exam success! We're
           dedicated to helping you conquer your exams with confidence. Our
-          platform offers a carefully curated collection of high-quality
+          platform offers a carefully curated collection of high-quality.
           study materials, including previous year questions,
           comprehensive notes, and study guides, to streamline your
           preparation journey. What sets us apart is our commitment to
