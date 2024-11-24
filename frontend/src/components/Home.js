@@ -8,7 +8,7 @@ import photo1 from "../photos/d_photo.png";
 import photo2 from "../photos/announce.png";
 import photo3 from "../photos/u_notes.png";
 import photo4 from "../photos/i_photo.png";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const Home = () => {
   const [isHovered1, setIsHovered1] = useState(false);

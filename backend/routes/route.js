@@ -33,55 +33,36 @@ import { verifyOTP } from "../controller/authController.js";
 
 import protectRoute from "../Middleware/authMiddleware.js";
 
+router.post("/upload", uploadLink);
+
+router.get("/links/:year/:branch", getLinks);
+
+router.get("/questions", protectRoute, getAllQuestions);
+router.post("/questions", protectRoute, postQuestion);
+router.post("/questions/:id/answers", protectRoute, postAnswer);
+
+router.get("/questions/:id/answers", protectRoute, getAllAnswers);
+
+router.post("/experiences", protectRoute, addInterview);
+router.get("/experiences", fetchInterview);
+router.get("/experiences/:id", getExperienceById);
+
+router.get("/falseExperiences", protectRoute, isAdmin, fetchfasleInterview);
+
+router.put("/experiences/:id/accept", acceptExperience);
+
+router.delete("/experiences/:id", protectRoute, isAdmin, declineExperience);
+
+router.post("/signup", signup);
+router.post("/login", login);
+router.post("/verifyOTP", verifyOTP);
+
+router.get("/userData", protectRoute, isAdmin, check);
+
+router.post("/notices", protectRoute, isAdmin, addNotice);
 
 
-
-router.post('/upload', uploadLink);
-
-
-router.get('/links/:year/:branch', getLinks);
-
-
-router.get('/questions', protectRoute, getAllQuestions);
-router.post('/questions', protectRoute, postQuestion);
-router.post('/questions/:id/answers', protectRoute, postAnswer);
-
-router.get('/questions/:id/answers', protectRoute, getAllAnswers);
-
-
-
-
-router.post('/experiences', protectRoute, addInterview);
-router.get('/experiences', fetchInterview);
-router.get('/experiences/:id', getExperienceById);
-
-router.get('/falseExperiences',protectRoute,isAdmin,fetchfasleInterview);
-
-router.put('/experiences/:id/accept',acceptExperience);
-
-router.delete('/experiences/:id',protectRoute,isAdmin,declineExperience)
-
-
-
-
-
-
-
-
-
-router.post('/signup', signup);
-router.post('/login', login);
-router.post('/verifyOTP',verifyOTP);
-
-
-router.get('/userData', protectRoute, isAdmin, check);
-
-router.post('/notices', protectRoute, isAdmin, addNotice);
-
-// router.get('/getnotices', protectRoute, fetchNotice);
-
-router.get('/notices/top', getTopNotices);
-router.get('/notices', getAllNotices);
-
+router.get("/notices/top", getTopNotices);
+router.get("/notices", getAllNotices);
 
 export default router;
